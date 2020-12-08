@@ -13,6 +13,10 @@ https://www.w3schools.com/css/default.asp
   float: right;
 }
 
+body {
+  background-color: lightblue;
+}
+
 .buttonBlock{
     /*Give your button block some style!
     Add color, change the border, and
