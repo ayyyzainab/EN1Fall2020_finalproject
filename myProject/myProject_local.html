@@ -58,14 +58,27 @@
 		<b><em>Monitor Cloud:</em></b>
 
 	  <div type="cloud_check" cloud_compare="changes" cloud_action="download_code">
-			<input type=text id="cloud_name" value="motor_speed">
+			<input type=text id="cloud_name" value="command">
       <input type=text id="cloud_value" value="0">
       <input type=text id="cloud_action_val" value="0">
-      <textarea id="cloud_code">from spike import Motor
-# motor connected to A:
-my_motor = Motor('A')
-# replace with speed value from cloud
-my_motor.start(REPLACE[cloud_current])
+      <textarea id="cloud_code">from spike import PrimeHub, LightMatrix
+from spike.control import wait_for_seconds, wait_until, Timer
+import random
+
+hub = PrimeHub()
+moveList = ['Rock', 'Paper', 'Scissors']
+p1Score = 0
+spikeScore = 0;
+
+p1Move = 'CLOUD[command]'
+spikeMove = random.choice(moveList)
+
+hub.light_matrix.write(spikeMove)
+
+if spikeMove == 'Paper':
+    spikeScore+=1
+elif spikeMove == 'Scissors':
+    p1Score+=1
 </textarea>
     </div>
 
