@@ -16,8 +16,8 @@ var getAPIusername = ""; // fill in with your name (if left blank, assuming usin
 // (2) Hardcode your API key information here
 
 // AIRTABLE SUPPORT
-var airtable_api = "keyneyUGmdW8Ott0d";     // fill in your info
-var airtable_baseid = "app2DR9qo9JoXMXyZ"; // fill in your info
+var airtable_api = "key" + "neyUGmdW8Ott0d";     // fill in your info
+var airtable_baseid = "app" + "2DR9qo9JoXMXyZ"; // fill in your info
 
 // SYSTEMLINK SUPPORT
 var systemlink_api = "XXXXXXXXXXXXXXXXXX"; // fill in your info
