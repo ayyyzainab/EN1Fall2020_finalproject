@@ -5,26 +5,28 @@
 	  <script src="../src/secret.js" charset="utf-8"></script>
 	  <script src="../src/cloud.js" charset="utf-8"></script>
 	  <link rel="stylesheet" href="../src/style.css" />
-		<link rel="preconnect" href="https://fonts.gstatic.com">
-		<link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
 	</head>
 <body>
 
 	<!-- SERVICE DOCK -->
 	<div id="servicedock">
-		<service-airtable id="service_airtable" tablename="myProject"></service-airtable>
+		<service-airtable id="service_airtable" tablename="finalProject"></service-airtable>
 		<service-spike id="service_spike"></service-spike>
 	</div>
 
-	<h1>My Project (Local Interface)</h1>
+	<h1>My Project</h1>
+
+  <p>This demo shows simple buttons that activate code within SPIKE Prime Slots.</p>
+
+  <h2>Local Interface</h2>
 
 	<div class="cloud_check">
 		<b><em>Monitor Cloud:</em></b>
 
-		<div type="cloud_check" cloud_compare="equal" cloud_action="run_slot">
-				<input type=text id="cloud_name" value="command">
-				<input type=text id="cloud_value" value="Rock">
-				<input type=text id="cloud_action_val" value="0">
+	  <div type="cloud_check" cloud_compare="equal" cloud_action="run_slot">
+		    <input type=text id="cloud_name" value="command">
+		    <input type=text id="cloud_value" value="Rock">
+		    <input type=text id="cloud_action_val" value="0">
 		</div>
 
 		<div type="cloud_check" cloud_compare="equal" cloud_action="run_slot">
@@ -34,19 +36,17 @@
 		</div>
 
 		<div type="cloud_check" cloud_compare="equal" cloud_action="run_slot">
-				<input type=text id="cloud_name" value="command">
-				<input type=text id="cloud_value" value="Scissors">
+		    <input type=text id="cloud_name" value="command">
+		    <input type=text id="cloud_value" value="Scissors">
 				<input type=text id="cloud_action_val" value="2">
 		</div>
 
 		<div type="cloud_check" cloud_compare="equal" cloud_action="stop_slot">
-				<input type=text id="cloud_name" value="command">
-				<input type=text id="cloud_value" value="Next">
+		    <input type=text id="cloud_name" value="command">
+		    <input type=text id="cloud_value" value="Next">
 		</div>
 
 	</div>
-
-	<hr>
 
 	<h2>My Project Quick Links:</h2>
   <p>
