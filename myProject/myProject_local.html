@@ -20,7 +20,7 @@
 
   <h2>Local Interface</h2>
 
-	<div class="cloud_check">
+	<!-- <div class="cloud_check">
 		<b><em>Monitor Cloud:</em></b>
 
 		<div type="cloud_check" cloud_compare="equal" cloud_action="run_slot">
@@ -52,7 +52,7 @@
 		    <input type=text id="cloud_value" value="Next">
 		</div>
 
-	</div>
+	</div> -->
 
 	<div class="cloud_check">
 		<b><em>Monitor Cloud:</em></b>
@@ -68,17 +68,38 @@ import random
 hub = PrimeHub()
 moveList = ['Rock', 'Paper', 'Scissors']
 p1Score = 0
-spikeScore = 0;
+spikeScore = 0
 
 p1Move = 'CLOUD[command]'
 spikeMove = random.choice(moveList)
 
 hub.light_matrix.write(spikeMove)
 
-if spikeMove == 'Paper':
+if p1Move == 'Rock' and spikeMove == 'Paper':
     spikeScore+=1
-elif spikeMove == 'Scissors':
+elif p1Move == 'Rock' and spikeMove == 'Scissors':
     p1Score+=1
+# elif p1Move == 'Rock' and spikeMove == 'Rock':
+#     hub.light_matrix('Draw!')
+elif p1Move == 'Paper' and spikeMove == 'Rock':
+    p1Score+=1
+# elif p1Move == 'Paper' and spikeMove == 'Paper':
+#     hub.light_matrix('Draw!')
+elif p1Move == 'Paper' and spikeMove == 'Scissors':
+    spikeScore+=1
+elif p1Move == 'Scissors' and spikeMove == 'Rock':
+    spikeScore+=1
+elif p1Move == 'Scissors' and spikeMove == 'Paper':
+    p1Score+=1
+# elif p1Move == 'Scissors' and spikeMove == 'Scissors':
+#     hub.light_matrix('Draw!')
+
+
+hub.light_matrix.write(spikeScore)
+wait_for_seconds(2)
+hub.light_matrix.write(p1Score)
+
+
 </textarea>
     </div>
 
