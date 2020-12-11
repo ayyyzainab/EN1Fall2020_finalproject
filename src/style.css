@@ -125,6 +125,7 @@ title {
 
 /* Make the image responsive */
 .container img {
+  float: left;
   width: 50%;
   height: auto;
 }
@@ -142,7 +143,8 @@ title {
 
 /* Style the button and place it in the middle of the container/image */
 .container .btn {
-  position: absolute;
+  /* position: absolute; */
+  float: left;
   top: 50%;
   left: 25%;
   transform: translate(-50%, -50%);
