@@ -118,9 +118,9 @@ title {
 
 
 .container {
-  position: relative;
-  width: 25%;
-  display: flex;
+  /* position: relative; */
+  float: left;
+  width: 33%;
 }
 
 /* Make the image responsive */
