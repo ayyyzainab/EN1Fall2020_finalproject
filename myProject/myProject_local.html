@@ -32,8 +32,6 @@ from spike.control import wait_for_seconds, wait_until, Timer
 import random
 
 hub = PrimeHub()
-sound = Speaker()
-app = App()
 moveList = ['Rock', 'Paper', 'Scissors']
 p1Score = 0
 spikeScore = 0
@@ -53,7 +51,6 @@ p1Move = 'CLOUD[command]'
 spikeMove = random.choice(moveList)
 
 hub.light_matrix.write(spikeMove)
-wait_for_seconds(2)
 
 if p1Move == 'Rock' and spikeMove == 'Paper':
     spikeScore+=1
@@ -85,6 +82,7 @@ elif p1Move == 'Paper' and spikeMove == 'Paper':
     hub.light_matrix.write('DRAW!')
 elif p1Move == 'Rock' and spikeMove == 'Rock':
     hub.light_matrix.write('DRAW!')
+
 </textarea>
 		<!-- <input type=text id="cloud_reset" value=""> -->
     </div>

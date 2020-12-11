@@ -129,6 +129,7 @@ h1 {
   /* position: relative; */
   float: left;
   width: 33%;
+  height: 50%
 }
 
 /* Make the image responsive */
@@ -168,4 +169,22 @@ h1 {
 .container .btn:hover {
   background-color: blue;
   opacity: 0.3;
+}
+
+.btn2 {
+  /* position: center; */
+  padding: 12px 24px;
+  border-radius: 5px;
+  background-color: lightgreen;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-100%, -100%);
+  transform: translate(-100%, -100%);
+  font-size: 24px;
+}
+
+.btn2:hover {
+  background-color: #4CAF50;
+  color: white;
 }
