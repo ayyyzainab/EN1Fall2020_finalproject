@@ -61,43 +61,57 @@
 			<input type=text id="cloud_name" value="command">
       <input type=text id="cloud_value" value="0">
       <input type=text id="cloud_action_val" value="0">
-      <textarea id="cloud_code">from spike import PrimeHub, LightMatrix
+      <textarea id="cloud_code">from spike import PrimeHub, LightMatrix, Speaker, App
 from spike.control import wait_for_seconds, wait_until, Timer
 import random
 
 hub = PrimeHub()
+sound = Speaker()
+app = App()
 moveList = ['Rock', 'Paper', 'Scissors']
 p1Score = 0
 spikeScore = 0
 
-p1Move = 'CLOUD[command]'
+# p1Move = 'CLOUD[command]'
+p1Move = 'Paper'
 spikeMove = random.choice(moveList)
 
 hub.light_matrix.write(spikeMove)
+wait_for_seconds(2)
 
 if p1Move == 'Rock' and spikeMove == 'Paper':
     spikeScore+=1
+    hub.light_matrix.show_image('NO')
+    # app.play_sound('Lose')
 elif p1Move == 'Rock' and spikeMove == 'Scissors':
     p1Score+=1
-# elif p1Move == 'Rock' and spikeMove == 'Rock':
-#     hub.light_matrix('Draw!')
+    hub.light_matrix.show_image('YES')
+    # app.play_sound('Win')
 elif p1Move == 'Paper' and spikeMove == 'Rock':
     p1Score+=1
-# elif p1Move == 'Paper' and spikeMove == 'Paper':
-#     hub.light_matrix('Draw!')
+    hub.light_matrix.show_image('YES')
+    # app.play_sound('Win')
 elif p1Move == 'Paper' and spikeMove == 'Scissors':
     spikeScore+=1
+    hub.light_matrix.show_image('NO')
+    # app.play_sound('Lose')
 elif p1Move == 'Scissors' and spikeMove == 'Rock':
     spikeScore+=1
+    hub.light_matrix.show_image('NO')
+    # app.play_sound('Lose')
 elif p1Move == 'Scissors' and spikeMove == 'Paper':
     p1Score+=1
-# elif p1Move == 'Scissors' and spikeMove == 'Scissors':
-#     hub.light_matrix('Draw!')
-
-
-hub.light_matrix.write(spikeScore)
-wait_for_seconds(2)
-hub.light_matrix.write(p1Score)
+    hub.light_matrix.show_image('YES')
+    # app.play_sound('Win')
+elif p1Move == 'Scissors' and spikeMove == 'Scissors':
+    hub.light_matrix.write('DRAW!')
+    # app.play_sound('Oops')
+elif p1Move == 'Paper' and spikeMove == 'Paper':
+    hub.light_matrix.write('DRAW!')
+    # app.play_sound('Oops')
+elif p1Move == 'Rock' and spikeMove == 'Rock':
+    hub.light_matrix.write('DRAW!')
+    # app.play_sound('Oops')
 </textarea>
 			<input type=text id="cloud_reset" value="">
     </div>
