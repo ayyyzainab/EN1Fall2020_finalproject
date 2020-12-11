@@ -125,7 +125,6 @@ title {
 
 /* Make the image responsive */
 .container img {
-  float: left;
   width: 50%;
   height: auto;
 }
