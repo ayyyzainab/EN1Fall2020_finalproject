@@ -27,15 +27,13 @@
 			<input type=text id="cloud_name" value="command">
       <input type=text id="cloud_value" value="0">
       <input type=text id="cloud_action_val" value="0">
-      <textarea id="cloud_code">from spike import PrimeHub, LightMatrix, Speaker, App
+      <textarea id="cloud_code">from spike import PrimeHub, LightMatrix, Speaker, Motor
 from spike.control import wait_for_seconds, wait_until, Timer
 import random
 
 hub = PrimeHub()
+motor = Motor('C')
 moveList = ['Rock', 'Paper', 'Scissors']
-p1Score = 0
-spikeScore = 0
-
 
 def winSound():
     hub.speaker.beep(75, 0.5)
@@ -48,32 +46,30 @@ def loseSound():
     hub.speaker.beep(58, 0.5)
 
 p1Move = 'CLOUD[command]'
+# p1Move = random.choice(moveList)
+motor.run_to_position(110, 'shortest path', 70)
+motor.run_to_position(180, 'shortest path', 70)
+motor.run_to_position(130, 'shortest path', 50)
 spikeMove = random.choice(moveList)
 
 hub.light_matrix.write(spikeMove)
 
 if p1Move == 'Rock' and spikeMove == 'Paper':
-    spikeScore+=1
     hub.light_matrix.show_image('NO')
     loseSound()
 elif p1Move == 'Rock' and spikeMove == 'Scissors':
-    p1Score+=1
     hub.light_matrix.show_image('YES')
     winSound()
 elif p1Move == 'Paper' and spikeMove == 'Rock':
-    p1Score+=1
     hub.light_matrix.show_image('YES')
     winSound()
 elif p1Move == 'Paper' and spikeMove == 'Scissors':
-    spikeScore+=1
     hub.light_matrix.show_image('NO')
     loseSound()
 elif p1Move == 'Scissors' and spikeMove == 'Rock':
-    spikeScore+=1
     hub.light_matrix.show_image('NO')
     loseSound()
 elif p1Move == 'Scissors' and spikeMove == 'Paper':
-    p1Score+=1
     hub.light_matrix.show_image('YES')
     winSound()
 elif p1Move == 'Scissors' and spikeMove == 'Scissors':
