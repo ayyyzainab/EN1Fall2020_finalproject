@@ -129,6 +129,12 @@ title {
   height: auto;
 }
 
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 .browser{
   flex: 25%;
   padding: 5px;
