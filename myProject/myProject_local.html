@@ -19,40 +19,6 @@
   <p>This demo shows simple buttons that activate code within SPIKE Prime Slots.</p>
 
   <h2>Local Interface</h2>
-<!--
-	<div class="cloud_check">
-		<b><em>Monitor Cloud:</em></b>
-
-		<div type="cloud_check" cloud_compare="equal" cloud_action="run_slot">
-		    <input type=text id="cloud_name" value="command">
-		    <input type=text id="cloud_value" value="Start">
-		    <input type=text id="cloud_action_val" value="3">
-		</div>
-
-	  <div type="cloud_check" cloud_compare="equal" cloud_action="run_slot">
-		    <input type=text id="cloud_name" value="command">
-		    <input type=text id="cloud_value" value="Rock">
-		    <input type=text id="cloud_action_val" value="0">
-		</div>
-
-		<div type="cloud_check" cloud_compare="equal" cloud_action="run_slot">
-			<input type=text id="cloud_name" value="command">
-			<input type=text id="cloud_value" value="Paper">
-			<input type=text id="cloud_action_val" value="1">
-		</div>
-
-		<div type="cloud_check" cloud_compare="equal" cloud_action="run_slot">
-		    <input type=text id="cloud_name" value="command">
-		    <input type=text id="cloud_value" value="Scissors">
-				<input type=text id="cloud_action_val" value="2">
-		</div>
-
-		<div type="cloud_check" cloud_compare="equal" cloud_action="stop_slot">
-		    <input type=text id="cloud_name" value="command">
-		    <input type=text id="cloud_value" value="Next">
-		</div>
-
-	</div> -->
 
 	<div class="cloud_check">
 		<b><em>Monitor Cloud:</em></b>
@@ -120,7 +86,7 @@ elif p1Move == 'Paper' and spikeMove == 'Paper':
 elif p1Move == 'Rock' and spikeMove == 'Rock':
     hub.light_matrix.write('DRAW!')
 </textarea>
-			<!-- <input type=text id="cloud_reset" value=""> -->
+		<input type=text id="cloud_reset" value="">
     </div>
 
 	</div>
