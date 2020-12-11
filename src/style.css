@@ -17,9 +17,17 @@ body {
   background-color: lightblue;
 }
 
-title {
-  font-size: 60px;
+h1 {
+  font-size: 50px;
   font-family: 'Gloria Hallelujah', cursive;
+  text-align: center;
+  background-color:lightgreen;
+  border-style: groove;
+  /* border:solid; */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  /* width:30%; */
 }
 
 .buttonBlock{
@@ -125,8 +133,8 @@ title {
 
 /* Make the image responsive */
 .container img {
-  width: 50%;
-  height: auto;
+  width: 200px;
+  height: 200px;
 }
 
 .row::after {
@@ -142,20 +150,22 @@ title {
 
 /* Style the button and place it in the middle of the container/image */
 .container .btn {
-  position: absolute;
-  top: 50%;
+  position: relative;
+  /* top: 50%; */
   left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
+  transform: translate(-80%, -100%);
+  /* -ms-transform: translate(-50%, -50%); */
   background-color: #555;
   color: white;
-  font-size: 16px;
-  padding: 12px 24px;
+  opacity: 0;
+  font-size: 30px;
+  padding: 80px 80px;
   border: none;
   cursor: pointer;
   border-radius: 5px;
 }
 
 .container .btn:hover {
-  background-color: black;
+  background-color: blue;
+  opacity: 0.3;
 }
